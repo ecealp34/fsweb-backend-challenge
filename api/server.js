@@ -1,7 +1,6 @@
 const express = require('express');
 const server = express();
 require('dotenv').config();
-const helmet = require('helmet');
 const cors = require('cors');
 const morgan = require('morgan');
 const authRouter = require('./Auth/auth-router');
@@ -12,7 +11,7 @@ const likeRouter = require('./likes/likes-router');
 const bookmarkRouter = require('./bookmarks/bookmarks-router');
 const { restricted, checkRole } = require('./Auth/auth-middleware');
 
-server.use(helmet());
+
 server.use(cors());
 server.use(morgan('dev'));
 server.use(express.json());
